@@ -17,7 +17,7 @@ class Config extends \Laravel\Config {
 	public static function write($file, $key, $val)
 	{
 		Config::set($file . '.' . $key, $val);
-		$config = var_export(self::get(), true);
+		$config = var_export(self::get($file), true);
 		
 		if (file_put_contents('application/config/'.$file.'.php', "<?php return $config;") > 0)
 		{
