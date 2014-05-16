@@ -13,7 +13,6 @@ class Config extends \Laravel\Config {
 	 * @param  mixed   $val
 	 * @return bool
 	 */
-
 	public static function write($file, $key, $val)
 	{
 		Config::set($file . '.' . $key, $val);
